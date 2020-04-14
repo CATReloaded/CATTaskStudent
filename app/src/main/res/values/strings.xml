@@ -8,6 +8,7 @@
     <string name="login">Login</string>
     <string name="name">Name</string>
     <string name="communication_method">Communication Method</string>
+    <string name="confirm_password">Confirm password</string>
     <string-array name="circles">
         <item>Android</item>
         <item>Back-End</item>
