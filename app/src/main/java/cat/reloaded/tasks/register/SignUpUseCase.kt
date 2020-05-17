@@ -5,13 +5,13 @@ import cat.reloaded.tasks.models.requests.SignUpRequest
 import cat.reloaded.tasks.repositories.AuthenticationRepository
 
 class SignUpUseCase(private val repo: AuthenticationRepository) {
-    suspend operator fun invoke(signUpRequest: SignUpRequest) {
-        when (val result = repo.signUp(signUpRequest)) {
+    suspend operator fun invoke(signUpRequest: SignUpRequest): SignUpViewState {
+        return when (val result = repo.signUp(signUpRequest)) {
             is Result.Success -> {
-                // TODO return view state with the success
+                SignUpViewState(signUpResponse = result.data)
             }
             is Result.Error -> {
-                // TODO return view state with the error
+                SignUpViewState(error = result.error)
             }
         }
     }
