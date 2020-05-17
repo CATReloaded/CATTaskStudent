@@ -1,7 +1,7 @@
 package cat.reloaded.tasks.datasource
 
-sealed class Result<T> {
-    class Success<T>(val data: T) : Result<T>()
+sealed class Result<out T> {
+    class Success<out T>(val data: T) : Result<T>()
     class Error(val error: Throwable) : Result<Nothing>()
 
     override fun toString(): String {
