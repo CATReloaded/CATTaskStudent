@@ -6,7 +6,7 @@ import cat.reloaded.tasks.models.requests.SignUpRequest
 import cat.reloaded.tasks.models.responses.SignUpResponse
 import cat.reloaded.tasks.repositories.AuthenticationRepository
 
-class AuthenticationRepositoryRemote(private val authenticationSource: AuthenticationSource) :
+internal class AuthenticationRepositoryRemote(private val authenticationSource: AuthenticationSource) :
     AuthenticationRepository {
     override suspend fun signUp(request: SignUpRequest): Result<SignUpResponse> {
         try {
